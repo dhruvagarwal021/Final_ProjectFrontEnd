@@ -12,7 +12,7 @@ function Register() {
     const handleSubmit = () => {
         const data = { fname: arr[0], lname: arr[1], phno: arr[2], email: arr[3], password: arr[4] };
 
-        Axios.post("http://localhost:4000/UserRoute/register", data, {
+        Axios.post("https://final-projectbackend.onrender.com/UserRoute/register", data, {
             headers: {
                 'Content-Type': 'application/json',
             },

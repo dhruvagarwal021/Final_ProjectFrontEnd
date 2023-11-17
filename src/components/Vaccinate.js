@@ -14,7 +14,7 @@ export function Vaccinate()
     const handleSubmit = () => {
         const data = { clientPhno: arr[0], category: arr[1], age: arr[2], petSex: arr[3], vaccine: arr[4] };
     
-        Axios.post("http://localhost:4000/VaccineRoute/vaccinate", data, {
+        Axios.post("https://final-projectbackend.onrender.com/VaccineRoute/vaccinate", data, {
             headers: {
                 'Content-Type': 'application/json',
             },

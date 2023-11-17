@@ -9,7 +9,7 @@ export function ForgotPw()
     const [newPassword,setNewPassword] = useState('');
 
     const handleUpdatePassword = () => {
-        Axios.post('http://localhost:4000/UserRoute/change-pw',{
+        Axios.post('https://final-projectbackend.onrender.com/UserRoute/change-pw',{
             phno:phno,
             email:email,
             newPassword:newPassword,

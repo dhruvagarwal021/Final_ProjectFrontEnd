@@ -6,7 +6,7 @@ export function PetsList(props)
 
     const handleClick=()=>
     {
-        Axios.delete("http://localhost:4000/PetsRoute/sell-pet/"+_id)
+        Axios.delete("https://final-projectbackend.onrender.com/PetsRoute/sell-pet/"+_id)
         .then((res)=>{
             if(res.status === 200)
             {
