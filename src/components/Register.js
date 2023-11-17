@@ -11,11 +11,18 @@ function Register() {
 
     const handleSubmit = () => {
         const data = { fname: arr[0], lname: arr[1], phno: arr[2], email: arr[3], password: arr[4] };
-        Axios.post("http://localhost:4000/UserRoute/register", data)
+
+        Axios.post("http://localhost:4000/UserRoute/register", data, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+
             .then((res) => {
-                console.log(res);
+                console.log("Server response:", res);
                 if (res.status === 200) {
                     alert("Record added successfully!");
+                    window.location.reload();
                 } else {
                     Promise.reject();
                 }
@@ -25,13 +32,17 @@ function Register() {
             });
     }
 
+
     return (
-        <div>
-            <RegisterationForm getState={getState}></RegisterationForm>
-            <button onClick={handleSubmit} className="mt-3 btn btn-primary" type="button">
-                Register
-            </button>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <RegisterationForm getState={getState}>Register</RegisterationForm>
+        </form>
+        // <div>
+        //     <RegisterationForm getState={getState}></RegisterationForm>
+        //     <button onClick={handleSubmit} className="mt-3 btn btn-primary" type="button">
+        //         Register
+        //     </button>
+        // </div>
     );
 }
 

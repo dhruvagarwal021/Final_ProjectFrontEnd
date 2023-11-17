@@ -1,0 +1,23 @@
+.cont1 {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.card {
+  width: 18rem;
+  height: 19rem;
+  background-color: gainsboro;
+}
+
+.cont1 {
+  padding-top: 300px;
+}
+
+.cont2 {
+  display: flex;
+  column-gap: 40px;
+
+  align-items: center;
+  margin-left: 160px;
+  margin-top: 20px;
+}

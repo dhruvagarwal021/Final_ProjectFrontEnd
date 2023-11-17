@@ -19,52 +19,18 @@ export function RegisterationForm(props) {
   const arr = [fname, lname, phno, email, password];
 
   const handleClick = (e) => {
-    e.preventDefault(); // Prevent default form submission
     props.getState(arr);
   };
 
   return (
-    <div>
-      {/* Keep the form element here */}
-      <form className="form" style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", height: "100vh" }}>
-        <center>
-          <table>
-            <tbody>
-              <tr>
-                <td colSpan="2" className="h1">Please Enter Your Details</td>
-              </tr>
-              <tr>
-                <td><label>Enter your First name :</label></td>
-                <td><input className="form-control" type="text" onChange={(event) => setFname(event.target.value)} /></td>
-              </tr>
-              <tr>
-                <td><label>Enter your Last name :</label></td>
-                <td><input className="form-control" type="text" onChange={(event) => setLname(event.target.value)} /></td>
-              </tr>
-              <tr>
-                <td><label>Enter your Contact number :</label></td>
-                <td><input className="form-control" type="number" onChange={(event) => setPhno(event.target.value)} /></td>
-              </tr>
-              <tr>
-                <td><label>Enter your email :</label></td>
-                <td><input className="form-control" type="email" onChange={(event) => setEmail(event.target.value)} /></td>
-              </tr>
-              <tr>
-                <td><label>Enter your password :</label></td>
-                <td><input className="form-control" type="password" onChange={(event) => setPassword(event.target.value)} /></td>
-              </tr>
-              <tr>
-                <td colSpan="2"><label>Re-Enter your password :</label></td>
-              </tr>
-              <tr>
-                <td colSpan="2" style={{ textAlign: "center" }}>
-                  <button onClick={handleClick} className="mt-3 btn btn-primary" type="submit">Register</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </center>
-      </form>
+    <div style={{backgroundImage: `url(${bg})`, backgroundSize:"cover", backgroundRepeat:"no-repeat", height:"100vh"}}>
+      <p className="display-3 text-center">Enter Your Details</p>
+      <input style={{width:"40%",position:"static"}} onChange={(event) => setFname(event.target.value)} placeholder="Enter your First Name" className="form-control mx-auto"/>
+      <input style={{width:"40%",position:"static"}} onChange={(event) => setLname(event.target.value)} placeholder="Enter your Last Name" className="form-control mx-auto my-3" />
+      <input style={{width:"40%",position:"static"}} onChange={(event) => setPhno(event.target.value)} placeholder="Enter your Ph No" className="form-control mx-auto my-3" />
+      <input style={{width:"40%",position:"static"}} onChange={(event) => setEmail(event.target.value)} placeholder="Enter your Email" className="form-control mx-auto my-3" />
+      <input style={{width:"40%",position:"static"}} onChange={(event) => setPassword(event.target.value)} placeholder="Enter your Password" className="form-control mx-auto my-2" />
+      <button onClick={handleClick} className="btn btn-success d-block mx-auto" type="submit">{props.children}</button>
     </div>
   );
 }
