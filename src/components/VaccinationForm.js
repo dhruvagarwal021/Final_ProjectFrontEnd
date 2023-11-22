@@ -47,7 +47,7 @@ export function VaccinationForm(props) {
                     Female
                 </option>
             </select>
-            <select style={{width:"40%", position:"static"}} className="form-control mx-auto my-2" value={petSex} onChange={handleVaccine}>
+            <select style={{width:"40%", position:"static"}} className="form-control mx-auto my-2" value={vaccine} onChange={handleVaccine}>
                 <option value="">
                     Select vaccine
                 </option>
